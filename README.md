@@ -1,8 +1,10 @@
 # grunt-wp-theme-foundation
 
 > Create a WordPress theme with [grunt-init][].
+> Based heavily on the work done by Eric Mann in [wp-theme][]
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
+[wp-theme]: https://github.com/10up/grunt-wp-theme
 
 ## Installation
 If you haven't already done so, install [grunt-init][].
@@ -12,13 +14,13 @@ Once grunt-init is installed, place this template in your `~/.grunt-init/` direc
 ### Linux/Mac Users
 
 ```
-git clone git@github.com:10up/grunt-wp-theme.git ~/.grunt-init/wp-theme
+git clone https://github.com/tannerm/wp-theme-foundation.git ~/.grunt-init/wp-theme-foundation
 ```
 
 ### Windows Users
 
 ```
-git clone git@github.com:10up/grunt-wp-theme.git %USERPROFILE%/.grunt-init/wp-theme
+git clone https://github.com/tannerm/wp-theme-foundation.git %USERPROFILE%/.grunt-init/wp-theme-foundation
 ```
 
 ## Usage
@@ -26,7 +28,7 @@ git clone git@github.com:10up/grunt-wp-theme.git %USERPROFILE%/.grunt-init/wp-th
 At the command-line, cd into an empty directory, run this command and follow the prompts.
 
 ```
-grunt-init wp-theme
+grunt-init wp-theme-foundation
 ```
 
 _Note that this template will generate files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files._
@@ -84,7 +86,4 @@ The `/img/src` directory exists only to allow you to keep track of source files 
 
 ## Release History
 
- * 2013-07-18   v0.1.3   Better grunt module inclusion (props @aaronjorbin)
- * 2013-05-31   v0.1.2   Fix a template renaming bug.
- * 2013-04-29   v0.1.1   Update directory structure and minified file names. Fix some naming mismatches.
- * 2013-04-26   v0.1.0   Initial public release
+ * 2014-07-23   v0.0.1   Initial release of Foundation starter theme with grunt-init
