@@ -1,7 +1,8 @@
 # grunt-wp-theme-foundation
 
 > Create a WordPress theme with [grunt-init][].
-> Based heavily on the work done by Eric Mann in [wp-theme][]
+
+> Based heavily on the work done by Eric Mann in [grunt-wp-theme][]
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
 [wp-theme]: https://github.com/10up/grunt-wp-theme
