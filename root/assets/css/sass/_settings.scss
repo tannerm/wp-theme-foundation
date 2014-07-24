@@ -27,18 +27,18 @@ $base-line-height: 150%;
 /*********************
 BODY
 *********************/
-$body-bg: $light;
+$body-bg: #fff;
 $body-font-color: #525252;
 $body-font-family: 'Verdana', 'Arial', sans-serif;
 $body-font-style: normal;
 
 // We use these as default colors throughout
-$primary-color: $orange;
-$secondary-color: $secondary;
-$alert-color: $red;
-$success-color: $green;
-$warning-color: $orange;
-$info-color: $blue-light;
+//$primary-color: #000;
+//$secondary-color: #000;
+//$alert-color: #000;
+//$success-color: #000;
+//$warning-color: #000;
+//$info-color: #000;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -93,20 +93,20 @@ $info-color: $blue-light;
 /********************
 TYPOGRAPHY
 ********************/
-$header-font-family: $body-font-family;
-$header-font-style: normal;
-$header-font-color: #222;
-$header-line-height: 1.4;
-$header-top-margin: .2rem;
-$header-bottom-margin: .5rem;
-$header-text-rendering: optimizeLegibility;
+// $header-font-family: $body-font-family;
+// $header-font-style: normal;
+// $header-font-color: #222;
+// $header-line-height: 1.4;
+// $header-top-margin: .2rem;
+// $header-bottom-margin: .5rem;
+// $header-text-rendering: optimizeLegibility;
 
-$h1-font-size: rem-calc(44);
-$h2-font-size: rem-calc(37);
-$h3-font-size: rem-calc(27);
-$h4-font-size: rem-calc(23);
-$h5-font-size: rem-calc(18);
-$h6-font-size: 1rem;
+// $h1-font-size: rem-calc(44);
+// $h2-font-size: rem-calc(37);
+// $h3-font-size: rem-calc(27);
+// $h4-font-size: rem-calc(23);
+// $h5-font-size: rem-calc(18);
+// $h6-font-size: 1rem;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
@@ -781,8 +781,8 @@ $h6-font-size: 1rem;
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-$panel-bg: white;
-$panel-border-style: solid;
+// $panel-bg: white;
+// $panel-border-style: solid;
 // $panel-border-size: 1px;
 
 // We use this % to control how much we darken things on hover
@@ -1148,7 +1148,7 @@ $panel-border-style: solid;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $tan;
+// $topbar-bg-color: $tan;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1169,16 +1169,16 @@ $topbar-bg-color: $tan;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $text;
-$topbar-link-color-hover: $primary-color;
+// $topbar-link-color: $text;
+// $topbar-link-color-hover: $primary-color;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-color-hover: $tan;
-$topbar-link-bg-hover: $tan;
+// $topbar-link-bg-color-hover: $tan;
+// $topbar-link-bg-hover: $tan;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;

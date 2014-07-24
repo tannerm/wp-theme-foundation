@@ -45,7 +45,7 @@ module.exports = function( grunt ) {
 					'Gruntfile.js'
 				],
 				options: {
-					jshintrc: '.gruntjshintrc'
+					jshintrc: '.jshintrc'
 				}
 			}   
 		},
@@ -77,6 +77,15 @@ module.exports = function( grunt ) {
 				},
 				files: {
 					'assets/css/{%= js_safe_name %}.css': 'assets/css/sass/{%= js_safe_name %}.scss'
+				}
+			}
+		},
+		compass: {                  // Task
+			dist: {                   // Target
+				options: {              // Target options
+					sassDir: 'assets/css/sass',
+						cssDir: 'assets/css',
+						environment: 'production'
 				}
 			}
 		},
