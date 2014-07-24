@@ -21,6 +21,13 @@ module.exports = function( grunt ) {
 					'assets/js/src/{%= js_safe_name %}.js'
 				],
 				dest: 'assets/js/{%= js_safe_name %}.js'
+			},
+			foundation: {
+				src: [
+					'assets/js/lib/foundation/foundation.js',
+					'assets/js/lib/foundation/foundation*.js'
+				],
+					dest: 'assets/js/lib/foundation.js'
 			}
 		},
 		jshint: {
@@ -45,7 +52,8 @@ module.exports = function( grunt ) {
 		uglify: {
 			all: {
 				files: {
-					'assets/js/{%= js_safe_name %}.min.js': ['assets/js/{%= js_safe_name %}.js']
+					'assets/js/{%= js_safe_name %}.min.js': ['assets/js/{%= js_safe_name %}.js'],
+					'assets/js/lib/foundation.min.js': ['assets/js/lib/foundation.js']
 				},
 				options: {
 					banner: '/*! <%= pkg.title %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -90,14 +98,14 @@ module.exports = function( grunt ) {
 		},
 		watch:  {
 			sass: {
-				files: ['assets/css/sass/*.scss'],
+				files: ['assets/css/sass/**/*.scss'],
 				tasks: ['sass', 'cssmin'],
 				options: {
 					debounceDelay: 500
 				}
 			},
 			scripts: {
-				files: ['assets/js/src/**/*.js', 'assets/js/vendor/**/*.js'],
+				files: ['assets/js/**/*.js'],
 				tasks: ['jshint', 'concat', 'uglify'],
 				options: {
 					debounceDelay: 500

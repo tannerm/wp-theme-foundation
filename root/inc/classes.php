@@ -156,11 +156,11 @@ class {%= prefix_caps %}_Excerpt {
 }
 
 // An alias to the class
-function {%= prefix }_excerpt($length = 55) {
+function {%= prefix %}_excerpt($length = 55) {
 	{%= prefix_caps %}_Excerpt::length($length);
 }
 
-function {%= prefix }_wp_trim_excerpt($text) {
+function {%= prefix %}_wp_trim_excerpt($text) {
 	$raw_excerpt = $text;
 	if ( '' == $text ) {
 		//Retrieve the post content.
@@ -193,4 +193,4 @@ function {%= prefix }_wp_trim_excerpt($text) {
 	return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
 }
 remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
-add_filter( 'get_the_excerpt', 'custom_wp_trim_excerpt' );
+add_filter( 'get_the_excerpt', '{%= prefix %}_wp_trim_excerpt' );

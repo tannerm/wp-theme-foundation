@@ -47,30 +47,16 @@ class {%= prefix_caps %}_Setup {
 	}
 
 	protected function add_includes() {
-		/**
-		 * Implement the Custom Header feature.
-		 */
-		require get_template_directory() . '/inc/custom-header.php';
-
-		/**
-		 * Custom template tags for this theme.
-		 */
-		require get_template_directory() . '/inc/template-tags.php';
 
 		/**
 		 * Custom functions that act independently of the theme templates.
 		 */
-		require get_template_directory() . '/inc/extras.php';
+		require get_template_directory() . '/inc/helper_functions.php';
 
 		/**
 		 * Customizer additions.
 		 */
 		require get_template_directory() . '/inc/customizer.php';
-
-		/**
-		 * Load Jetpack compatibility file.
-		 */
-		require get_template_directory() . '/inc/jetpack.php';
 
 		/**
 		 * Include custom Foundation functionality
@@ -122,10 +108,10 @@ class {%= prefix_caps %}_Setup {
 		/**
 		 * Make theme available for translation
 		 * Translations can be filed in the /languages/ directory
-		 * If you're building a theme based on {%= prefix }, use a find and replace
-		 * to change '{%= prefix }' to the name of your theme in all the template files
+		 * If you're building a theme based on {%= prefix %}, use a find and replace
+		 * to change '{%= prefix %}' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( '{%= prefix }', get_template_directory() . '/languages' );
+		load_theme_textdomain( '{%= prefix %}', get_template_directory() . '/languages' );
 
 		/**
 		 * Add default posts and comments RSS feed links to head
@@ -142,7 +128,7 @@ class {%= prefix_caps %}_Setup {
 		/**
 		 * Setup the WordPress core custom background feature.
 		 */
-		add_theme_support( 'custom-background', apply_filters( '{%= prefix }_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( '{%= prefix %}_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -166,57 +152,6 @@ class {%= prefix_caps %}_Setup {
 				'name'        => 'Default Sidebar',
 				'description' => 'Default sidebar display',
 			),
-			array(
-				'id'          => 'home-sidebar',
-				'name'        => 'Homepage Sidebar',
-				'description' => 'Sidebar display for the homepage',
-			),
-			array(
-				'id'          => 'lp-sidebar',
-				'name'        => 'Landing Page Sidebar',
-				'description' => 'Sidebar display for landing page (formerly Homepage 2) template',
-			),
-			array(
-				'id'          => 'pb-sidebar',
-				'name'        => 'Playbooks Sidebar',
-				'description' => 'Sidebar display for Playbooks',
-			),
-			array(
-				'id'          => 'kids-sidebar',
-				'name'        => 'Kids Sidebar',
-				'description' => 'Sidebar display for Kids Playbooks and other Kids pages',
-			),
-			array(
-				'id'          => 'blog-sidebar',
-				'name'        => 'Blog Sidebar',
-				'description' => 'Sidebar display for blog and blog posts',
-			),
-			array(
-				'id'          => 'sop-sidebar',
-				'name'        => 'Science of Play Sidebar',
-				'description' => 'Sidebar display for Science of Play and other pages',
-			),
-			array(
-				'id'          => 'al-sidebar',
-				'name'        => 'Alternative Learners Sidebar',
-				'description' => 'Sidebar display for Alternative Learner pages',
-			),
-			array(
-				'id'          => 'forum-sidebar',
-				'name'        => 'Forum Sidebar',
-				'description' => 'Sidebar display for the forums',
-			),
-			array(
-				'id'          => 'membership-sidebar',
-				'name'        => 'Membership Sidebar',
-				'description' => 'Sidebar display for Member Info, Sign-Up, Checkout & Login pages',
-			),
-			array(
-				'id'          => 'assessment-sidebar',
-				'name'        => 'Assessment Sidebar',
-				'description' => 'Sidebar display for Thinking Skills Mini-Assessment & All Assessment Results pages',
-			),
-
 		);
 
 		foreach( $sidebars as $sidebar ) {
@@ -228,13 +163,7 @@ class {%= prefix_caps %}_Setup {
 	/**
 	 * Unregister widgets
 	 */
-	public function unregister_widgets() {
-		unregister_widget( 'WP_Widget_Pages'        );
-		unregister_widget( 'WP_Widget_Calendar'     );
-		unregister_widget( 'WP_Widget_Links'        );
-		unregister_widget( 'WP_Widget_Meta'         );
-		unregister_widget( 'WP_Widget_Recent_Posts' );
-	}
+	public function unregister_widgets() {}
 
 	/**
 	 * Enqueue styles and scripts
@@ -250,7 +179,7 @@ class {%= prefix_caps %}_Setup {
 	protected function enqueue_styles() {
 		$postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-		wp_enqueue_style( '{%= prefix }', get_template_directory_uri() . "/assets/css/{%= js_safe_name %}_theme{$postfix}.css", array(), {%= prefix_caps %}_VERSION );
+		wp_enqueue_style( '{%= prefix %}', get_template_directory_uri() . "/assets/css/{%= js_safe_name %}_theme{$postfix}.css", array(), {%= prefix_caps %}_VERSION );
 	}
 
 	/**
@@ -267,16 +196,16 @@ class {%= prefix_caps %}_Setup {
 		wp_enqueue_script( 'zepto',               get_template_directory_uri() . '/assets/js/lib/zepto.js',               array(),           '01',       true );
 		wp_enqueue_script( 'foundation',          get_template_directory_uri() . '/assets/js/lib/foundation.min.js',      array( 'jquery' ), '01',       true );
 
-		wp_enqueue_script('myapp', get_template_directory_uri(). '/js/{%= prefix }.js', array(), '01', true);
+		wp_enqueue_script('myapp', get_template_directory_uri(). '/js/{%= prefix %}.js', array(), '01', true);
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
 		if ( is_singular() && wp_attachment_is_image() ) {
-			wp_enqueue_script( '{%= prefix }-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+			wp_enqueue_script( '{%= prefix %}-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 		}
 
-		wp_enqueue_script( '{%= prefix }', get_template_directory_uri() . "/assets/js/{%= js_safe_name %}_theme{$postfix}.js", array( 'jquery', 'foundation' ), {%= prefix_caps %}_VERSION, true );
+		wp_enqueue_script( '{%= prefix %}', get_template_directory_uri() . "/assets/js/{%= js_safe_name %}_theme{$postfix}.js", array( 'jquery', 'foundation' ), {%= prefix_caps %}_VERSION, true );
 	}
 
 	/**
@@ -290,8 +219,6 @@ class {%= prefix_caps %}_Setup {
 	protected function add_menus() {
 		register_nav_menus( array(
 			'menu'   => 'Top Menu',
-			'social' => 'Social Menu',
-			'footer' => 'Footer Menu',
 		) );
 	}
 

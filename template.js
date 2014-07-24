@@ -24,13 +24,13 @@ exports.warnOn = '*';
 exports.template = function( grunt, init, done ) {
 	init.process( {}, [
 		// Prompt for these values.
-		init.prompt( 'title', 'WP Theme' ),
+		init.prompt( 'title', 'WP Foundation' ),
 		{
 			name   : 'prefix',
 			message: 'PHP function prefix (alpha and underscore characters only)',
-			default: 'wptheme'
+			default: 'wpfoundation'
 		},
-		init.prompt( 'description', 'The best WordPress theme ever made!' ),
+		init.prompt( 'description', 'Starter theme based on Foundation' ),
 		init.prompt( 'homepage', 'http://wordpress.org/themes' ),
 		init.prompt( 'author_name' ),
 		init.prompt( 'author_email' ),
