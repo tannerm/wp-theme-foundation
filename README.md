@@ -5,7 +5,7 @@
 > Based heavily on the work done by Eric Mann in [grunt-wp-theme][]
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
-[wp-theme]: https://github.com/10up/grunt-wp-theme
+[grunt-wp-theme]: https://github.com/10up/grunt-wp-theme
 
 ## Installation
 If you haven't already done so, install [grunt-init][].
