@@ -6,8 +6,10 @@
  * Licensed under the GPLv2+ license.
  */
  
- ( function( window, undefined ) {
+ ( function( $, window, undefined ) {
 	'use strict';
 
+	 $(document).foundation();
 
- } )( this );
+
+ } )( jQuery, this );

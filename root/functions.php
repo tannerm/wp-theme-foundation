@@ -179,7 +179,7 @@ class {%= prefix_caps %}_Setup {
 	protected function enqueue_styles() {
 		$postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-		wp_enqueue_style( '{%= prefix %}', get_template_directory_uri() . "/assets/css/{%= js_safe_name %}_theme{$postfix}.css", array(), {%= prefix_caps %}_VERSION );
+		wp_enqueue_style( '{%= prefix %}', get_template_directory_uri() . "/assets/css/{%= js_safe_name %}{$postfix}.css", array(), {%= prefix_caps %}_VERSION );
 	}
 
 	/**
@@ -193,10 +193,8 @@ class {%= prefix_caps %}_Setup {
 		 */
 		wp_enqueue_script( 'navigation',          get_template_directory_uri() . '/assets/js/lib/navigation.js',          array(),           '20120206', true );
 		wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/assets/js/lib/skip-link-focus-fix.js', array(),           '20130115', true );
-		wp_enqueue_script( 'zepto',               get_template_directory_uri() . '/assets/js/lib/zepto.js',               array(),           '01',       true );
 		wp_enqueue_script( 'foundation',          get_template_directory_uri() . '/assets/js/lib/foundation.min.js',      array( 'jquery' ), '01',       true );
 
-		wp_enqueue_script('myapp', get_template_directory_uri(). '/js/{%= prefix %}.js', array(), '01', true);
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
@@ -205,7 +203,7 @@ class {%= prefix_caps %}_Setup {
 			wp_enqueue_script( '{%= prefix %}-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 		}
 
-		wp_enqueue_script( '{%= prefix %}', get_template_directory_uri() . "/assets/js/{%= js_safe_name %}_theme{$postfix}.js", array( 'jquery', 'foundation' ), {%= prefix_caps %}_VERSION, true );
+		wp_enqueue_script( '{%= prefix %}', get_template_directory_uri() . "/assets/js/{%= js_safe_name %}{$postfix}.js", array( 'jquery', 'foundation' ), {%= prefix_caps %}_VERSION, true );
 	}
 
 	/**
@@ -218,7 +216,7 @@ class {%= prefix_caps %}_Setup {
 	 */
 	protected function add_menus() {
 		register_nav_menus( array(
-			'menu'   => 'Top Menu',
+			'primary'   => 'Main Menu',
 		) );
 	}
 

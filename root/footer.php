@@ -17,7 +17,7 @@
 			<?php do_action( '{%= prefix %}_credits' ); ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '{%= prefix %}' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', '{%= prefix %}' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', '{%= prefix %}' ), '{%= prefix %}', '<a href="http://jaff.es/" rel="designer">jaff.es</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s', '{%= prefix %}' ), '{%= prefix %}' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- panel -->
